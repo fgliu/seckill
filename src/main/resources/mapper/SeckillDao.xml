@@ -3,6 +3,14 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 	<mapper namespace="org.seckill.dao.SeckillDao">
+	 <resultMap type="org.seckill.entity.Seckill" id="seckill">
+		<id column="seckill_id" property="seckillId"/>
+		<result column="name" property="name"/>
+		<result column="number" property="number"/>
+		<result column="start_time" property="startTime"/>
+		<result column="end_time" property="endTime"/>
+		<result column="create_time" property="createTime"/>
+	</resultMap>
 		<update id="reduceNumber">
 			update
 				seckill
@@ -13,12 +21,12 @@
 			and end_time &gt;= #{killTime}
 			and number>0;
 		</update>
-		<select id="queryById" resultType="Seckill" parameterType="long">
+		<select id="queryById" resultMap="seckill" parameterType="long">
 			select seckill_id,name,number,start_time,end_time,create_time
 			from seckill
 			where seckill_id =#{seckillId}
 		</select>
-		<select id="queryAll" resultType="Seckill">
+		<select id="queryAll" resultMap="seckill">
 			select seckill_id,name,number,start_time,end_time,create_time
 			from seckill
 			order by create_time desc

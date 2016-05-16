@@ -7,6 +7,16 @@ public class Seckill {
 	
 	private long seckillId;
 	
+	private String name;
+	
+	private int number;
+	
+	private Date startTime;
+	
+	private Date endTime;
+	
+	private Date createTime;
+	
 	public long getSeckillId() {
 		return seckillId;
 	}
@@ -55,15 +65,7 @@ public class Seckill {
 		this.createTime = createTime;
 	}
 
-	private String name;
-	
-	private int number;
-	
-	private Date startTime;
-	
-	private Date endTime;
-	
-	private Date createTime;
+
 
 	/**
 	 * @param args

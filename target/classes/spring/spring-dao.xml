@@ -27,4 +27,5 @@ http://www.springframework.org/schema/context/spring-context.xsd">
 		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" /> 
 		<property name="basePackage" value="org.seckill.dao" />
 	</bean>
+	
 </beans>
