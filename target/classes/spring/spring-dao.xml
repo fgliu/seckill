@@ -28,4 +28,30 @@ http://www.springframework.org/schema/context/spring-context.xsd">
 		<property name="basePackage" value="org.seckill.dao" />
 	</bean>
 	
+	
+	<mvc:interceptors>
+			  <!-- On pre-handle, resolve the device that originated the web request -->
+			  <bean class="org.springframework.mobile.device.DeviceResolverHandlerInterceptor" />
+			  <!-- On pre-handle, manage the user's site preference (declare after DeviceResolverHandlerInterceptor) -->  
+              <beans:bean class="org.springframework.mobile.device.site.SitePreferenceHandlerInterceptor" />  
+	</mvc:interceptors>
+	
+	<annotation-driven>
+	  <argument-resolvers>
+	    <bean class="org.springframework.mobile.device.DeviceWebArgumentResolver" />
+	    <bean class="org.springframework.mobile.device.site.SitePreferenceWebArgumentResolver" />  
+	  </argument-resolvers>
+	</annotation-driven>
+	
+	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->  
+        <beans:bean class="org.springframework.mobile.device.view.LiteDeviceDelegatingViewResolver">  
+                <beans:constructor-arg>  
+                        <beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">  
+                                <beans:property name="prefix" value="/WEB-INF/jsp/" />  
+                                <beans:property name="suffix" value=".jsp" />  
+                        </beans:bean>  
+                </beans:constructor-arg>  
+                <beans:property name="mobilePrefix" value="mobile/" />  
+                <beans:property name="tabletPrefix" value="tablet/" />  
+        </beans:bean>  
 </beans>
