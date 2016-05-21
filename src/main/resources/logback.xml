@@ -34,7 +34,7 @@
 		<appender-ref ref="STDOUT" />
 	</logger>
 	
-	<logger name="org.seckill" level="info" additivity="false">
+	<logger name="org.seckill" level="debug" additivity="false">
 		<appender-ref ref="STDOUT" />
 	</logger>
 	 
