@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:mvc="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd
+http://www.springframework.org/schema/tx
+http://www.springframework.org/schema/tx/spring-tx.xsd">
+    <!--配置springMVC -->
+    <!--1:开启springMVC 注解模式 -->
+    <!--简化配置
+    1：自动注册DefaultAnnotationHandleMapping,AnnotationMethodHandleAdapter
+    2: 提供一系列：数据绑定，数字和日期的format @NumberFormat @DateFormat,
+        xml,json 默认读写支持
+    -->
+    <mvc:annotation-driven>
+        <!--
+        1:静态资源默认servlet 配置
+        2：加入对静态资源的处理：js,gif,png
+        3:允许使用"/" 做整体映射
+        -->
+
+    </mvc:annotation-driven>
+
+    <!-- 4：配置 jsp 显示viewResolver-->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+        <property name="prefix" value="/WEB-INF/jsp"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
+    <!--5:打描web相关的bean -->
+    <context:component-scan base-package="org.seckill.web" />
+</beans>

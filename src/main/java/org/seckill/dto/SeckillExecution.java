@@ -32,4 +32,11 @@ public class SeckillExecution {
         this.state = state;
         this.stateInfo = stateInfo;
     }
+
+    public SeckillExecution(Long seckillId, SeckillStatEnum seckillStatEnum) {
+        this.seckillId = seckillId;
+        this.state = seckillStatEnum.getState();
+        this.stateInfo = seckillStatEnum.getStateInfo();
+
+    }
 }
