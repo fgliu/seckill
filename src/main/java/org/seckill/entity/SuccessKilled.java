@@ -3,70 +3,70 @@ package org.seckill.entity;
 import java.util.Date;
 
 public class SuccessKilled {
-	
-	private long seckillId;
-	
-	public long getSeckillId() {
-		return seckillId;
-	}
 
-	public void setSeckillId(long seckillId) {
-		this.seckillId = seckillId;
-	}
+    private long seckillId;
 
-	public long getUserPhone() {
-		return userPhone;
-	}
+    private long userPhone;
 
-	public void setUserPhone(long userPhone) {
-		this.userPhone = userPhone;
-	}
+    private short state;
 
-	public short getState() {
-		return state;
-	}
+    private Date createTime;
 
-	public void setState(short state) {
-		this.state = state;
-	}
+    private Seckill seckill;
 
-	public Date getCreateTime() {
-		return createTime;
-	}
+    public Seckill getSeckill() {
+        return seckill;
+    }
 
-	public void setCreateTime(Date createTime) {
-		this.createTime = createTime;
-	}
+    public void setSeckill(Seckill seckill) {
+        this.seckill = seckill;
+    }
 
-	private long userPhone;
-	
-	private short state;
-	
-	private Date createTime;
-	
-	private Seckill seckill;
+    public long getSeckillId() {
+        return seckillId;
+    }
 
-	public Seckill getSeckill() {
-		return seckill;
-	}
+    public void setSeckillId(long seckillId) {
+        this.seckillId = seckillId;
+    }
 
-	public void setSeckill(Seckill seckill) {
-		this.seckill = seckill;
-	}
+    public long getUserPhone() {
+        return userPhone;
+    }
 
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+    public void setUserPhone(long userPhone) {
+        this.userPhone = userPhone;
+    }
 
-	}
+    public short getState() {
+        return state;
+    }
 
-	@Override
-	public String toString() {
-		return "SuccessKilled [seckillId=" + seckillId + ", userPhone="
-				+ userPhone + ", state=" + state + ", createTime=" + createTime
-				+ "]";
-	}
+    public void setState(short state) {
+        this.state = state;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+
+    }
+
+    @Override
+    public String toString() {
+        return "SuccessKilled [seckillId=" + seckillId + ", userPhone="
+                + userPhone + ", state=" + state + ", createTime=" + createTime
+                + "]";
+    }
 
 }

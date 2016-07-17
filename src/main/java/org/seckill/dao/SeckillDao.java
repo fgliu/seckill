@@ -12,5 +12,5 @@ public interface SeckillDao {
 	
 	Seckill queryById(long seckillId);
 	
-	List<Seckill> queryAll(int offset,int limit);
+	List<Seckill> queryAll(@Param("offset") int offset,@Param("limit") int limit);
 }
