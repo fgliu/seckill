@@ -24,13 +24,13 @@ import java.util.List;
  * Created by andy on 16/7/17.
  */
 @Controller
-@RequestMapping("/seckill") //url: /模块/资源/{id}/细分 /seckill/list
+@RequestMapping("/sk") //url: /模块/资源/{id}/细分 /seckill/list
 public class SeckillController {
     private Logger logger = LoggerFactory.getLogger(this.getClass());
     @Autowired
     private SeckillService seckillService;
 
-    @RequestMapping(name = "/list", method = RequestMethod.GET)
+    @RequestMapping(value = "/list", method = RequestMethod.GET)
     public String list(Model model) {
         //获取列表页
         List<Seckill> list = seckillService.getSeckillList();
@@ -54,7 +54,7 @@ public class SeckillController {
 
     @RequestMapping(value = "/{seckillId}/exposer",
             method = RequestMethod.POST,
-            produces = {"application/json:charset=UTF-8"})
+            produces = {"application/json;charset=UTF-8"})
     @ResponseBody
     public SeckillResult<Exposer> exposer(Long seckillId) {
 
@@ -71,7 +71,7 @@ public class SeckillController {
 
     @RequestMapping(value = "/{seckillId}/{md5}/execution",
     method = RequestMethod.POST,
-    produces = "application/json:charset=UTF-8")
+    produces = "application/json;charset=UTF-8")
     @ResponseBody
     public SeckillResult<SeckillExecution> execute(@PathVariable("seckillId")Long seckillId,
                                                    @PathVariable("md5") String md5,

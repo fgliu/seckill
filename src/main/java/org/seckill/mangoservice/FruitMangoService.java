@@ -1,4 +1,4 @@
-package org.seckill.service;
+package org.seckill.mangoservice;
 
 import javax.sql.DataSource;
 
@@ -12,13 +12,13 @@ import org.springframework.stereotype.Service;
 public class FruitMangoService {
 	
 	@Autowired
-	FruitDao dao;
+	FruitDao fruitDao;
 	
 	public void insert(){
         String name = "apple";
         int num = 7;
-        dao.add(name, num);
-        System.out.println(dao.getTotalNum(name));
+        fruitDao.add(name, num);
+        System.out.println(fruitDao.getTotalNum(name));
 		
 	}
 	
@@ -33,7 +33,7 @@ public class FruitMangoService {
 //	    System.out.println(ctx.getBean(FruitDao.class) != null);
 		
 		String driverClassName = "com.mysql.jdbc.Driver";
-        String url = "jdbc:mysql://localhost:3306/mango_example";
+        String url = "jdbc:mysql://localhost:3306/seckill";
         String username = "root"; // 这里请使用您自己的用户名
         String password = "root"; // 这里请使用您自己的密码
         DataSource ds = new DriverManagerDataSource(driverClassName, url, username, password);

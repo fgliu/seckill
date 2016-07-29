@@ -1,10 +1,10 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@include file="common/tag.jsp"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java"  isELIgnored="false" %>
+<%@ include file="common/tag.jsp"%>
 <!DOCTYPE html>
 <html>
    <head>
       <title>秒杀列表页</title>
-        <%@include file="common/head.jsp"%>
+        <%@ include file="common/head.jsp"%>
    </head>
    <body>
    <!--页面显示部分 -->
@@ -41,7 +41,7 @@
                                         <fmt:formatDate value="${sk.createTime}" pattern="yyyy-MM-dd HH:mm:ss" />
                                     </td>
                                     <td>
-                                        <a class="btn btn-info" href="/seckill/${sk.seckillId}/detail" target="_blank"
+                                        <a class="btn btn-info" href="/seckill/${sk.seckillId}/detail" target="_blank"></a>
                                     </td>
                                 </tr>
                               </c:forEach>

@@ -1,4 +1,4 @@
-package org.seckill.service;
+package org.seckill.web;
 
 import org.seckill.entity.Quote;
 import org.slf4j.Logger;

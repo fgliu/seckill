@@ -1,4 +1,4 @@
-package org.seckill.service;
+package org.seckill.web;
 
 import java.io.BufferedOutputStream;
 import java.io.File;

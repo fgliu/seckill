@@ -1,4 +1,4 @@
-package org.seckill.service;
+package org.seckill.web;
 
 import org.springframework.mobile.device.Device;
 import org.springframework.stereotype.Controller;

@@ -1,4 +1,4 @@
-package org.seckill.service;
+package org.seckill.web;
 
 import java.util.Arrays;
 import java.util.List;

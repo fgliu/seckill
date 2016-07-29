@@ -4,8 +4,20 @@
 
 <web-app>
   <display-name>seckill</display-name>
+  
+ <context-param>
+ 	<param-name>contextConfigLocation</param-name>
+ 	<param-value>classpath:spring/spring-*.xml</param-value>
+ </context-param>
+ 
+ <listener><!-- Listener用于加载Spring应用上下文配置文件 -->
+    <listener-class>org.springframework.web.context.ContextLoaderListener
+    </listener-class>
+ </listener>
+
+	
   <servlet>
-    <servlet-name>seckill-dispatcher</servlet-name>
+    <servlet-name>appServlet</servlet-name>
     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
     <!--
     配置springMVC需要加载的配置文件
@@ -16,9 +28,11 @@
       <param-name>contextConfigLocation</param-name>
       <param-value>classpath:spring/spring-*.xml</param-value>
     </init-param>
+    <load-on-startup>1</load-on-startup>
+	<async-supported>true</async-supported>
   </servlet>
   <servlet-mapping>
-    <servlet-name>seckill-dispatcher</servlet-name>
+    <servlet-name>appServlet</servlet-name>
     <!-- 默认匹配所有的请求-->
     <url-pattern>/</url-pattern>
   </servlet-mapping>
