@@ -26,7 +26,33 @@ public class GreetingController {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		GreetingController o = new GreetingController();
+		System.out.println("开始");
+		o.aaa();
+		System.out.println();
+		System.out.println("结束");
 
+	}
+
+	public void aaa() {
+		System.out.println();
+		System.out.println("执行: " + Thread.currentThread().getStackTrace()[1]);
+		System.out.println("方法: " + Thread.currentThread().getStackTrace()[2] + " 调用了  " + Thread.currentThread().getStackTrace()[1]);
+		bbb();
+	}
+
+	public void bbb() {
+		System.out.println();
+		System.out.println("执行: " + Thread.currentThread().getStackTrace()[1]);
+		System.out.println("方法: " + Thread.currentThread().getStackTrace()[2] + " 调用了  " + Thread.currentThread().getStackTrace()[1]);
+		ccc();
+	}
+
+	public void ccc() {
+		System.out.println();
+		System.out.println("执行: " + Thread.currentThread().getStackTrace()[1]);
+		System.out.println("方法: " + Thread.currentThread().getStackTrace()[2] + " 调用了  " + Thread.currentThread().getStackTrace()[1]);
+		System.out.println("方法: " + Thread.currentThread().getStackTrace()[3] + " 调用了  " + Thread.currentThread().getStackTrace()[2]);
 	}
 
 }
